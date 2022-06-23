@@ -74,6 +74,7 @@ export const Wrapper = styled.section`
 
   .carousel__list .carousel__dot {
     background-color: transparent;
+    color: inherit;
     font: inherit;
     border: none;
     white-space: nowrap;
