@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { VisibilityContext } from "react-horizontal-scrolling-menu";
 import styled from "styled-components";
 
-const ServiceCard = ({ title, text }) => {
+const ServiceCard = ({ title, text, itemId }) => {
+  const visibility = useContext(VisibilityContext);
+
   return (
     <Wrapper className="card">
       <h3 className="card__title">{title}</h3>
@@ -17,7 +21,7 @@ const Wrapper = styled.div`
     background-color: var(--text-color);
     padding: 2rem 2.125rem;
     border-radius: 1.25rem;
-    width: 315px;
+    width: 100%;
     height: 100%;
   }
 

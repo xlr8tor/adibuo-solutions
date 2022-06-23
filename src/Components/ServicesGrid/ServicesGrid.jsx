@@ -1,4 +1,7 @@
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
+import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import { LeftArrow, RightArrow } from "../Arrows/Arrows";
+import usePreventBodyScroll from "../../Hooks/usePreventBodyScroll";
 import styled from "styled-components";
 import ServiceCard from "../ServicesCard/ServicesCard";
 import { Services } from "../../Util/Services";
@@ -10,6 +13,8 @@ import ContactUs from "../ContactUs/ContactUs";
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesGrid = () => {
+  const [items] = useState(Services);
+  const { disableScroll, enableScroll } = usePreventBodyScroll();
   let isDesktop = useWindowWidth() >= 768 ? true : false;
 
   const panels = useRef([]);
@@ -20,32 +25,67 @@ const ServicesGrid = () => {
     panels.current[index] = panel;
   };
 
-  useLayoutEffect(() => {
-    const totalPanels = panels.current.length;
+  // useLayoutEffect(() => {
+  //   const totalPanels = panels.current.length;
 
-    timeline.current = gsap.timeline({
-      scrollTrigger: {
-        id: "trigger",
-        pin: panelsContainer.current,
-        scrub: 1,
-        trigger: panelsContainer.current,
-        end: () => "+=" + panelsContainer.current.offsetWidth,
-      },
-      defaults: { ease: "none", duration: 1 },
-    });
+  //   timeline.current = gsap.timeline({
+  //     scrollTrigger: {
+  //       id: "trigger",
+  //       pin: panelsContainer.current,
+  //       scrub: 1,
+  //       trigger: panelsContainer.current,
+  //       end: () => "+=" + panelsContainer.current.offsetWidth,
+  //     },
+  //     defaults: { ease: "none", duration: 1 },
+  //   });
 
-    timeline.current.to(
-      panels.current,
-      {
-        xPercent: -100 * (totalPanels - 1),
-      },
-      0
-    );
-  }, []);
+  //   timeline.current.to(
+  //     panels.current,
+  //     {
+  //       xPercent: -100 * (totalPanels - 1),
+  //     },
+  //     0
+  //   );
+  // }, []);
 
   return (
-    <Wrapper id="horizontal-scroll" className="section" ref={panelsContainer}>
-      <div className="scroll__wrapper container">
+    <Wrapper id="horizontal-scroll" className="section">
+      <div
+        className="scroll__wrapper container"
+        // onMouseLeave={enableScroll}
+        // onMouseEnter={disableScroll}
+      >
+        {isDesktop ? (
+          <ScrollMenu
+            LeftArrow={LeftArrow}
+            RightArrow={RightArrow}
+            className="services__list  grid"
+          >
+            {Services.map((item) => (
+              <ServiceCard
+                title={item.title}
+                text={item.text}
+                itemId={item.id}
+                key={item.id}
+              />
+            ))}
+          </ScrollMenu>
+        ) : (
+          <ul className="services__list grid">
+            {Services.map((item, index) => {
+              return (
+                <li
+                  className="services__item"
+                  key={index}
+                  ref={(e) => createPanelsRefs(e, index)}
+                >
+                  <ServiceCard title={item.title} text={item.text} />
+                </li>
+              );
+            })}
+          </ul>
+        )}
+
         <ul className="services__list  grid">
           {/* <li ref={(e) => createPanelsRefs(e, 0)} className="list__accent">
             <div className="section__header">
@@ -63,7 +103,7 @@ const ServicesGrid = () => {
             </div>
           </li> */}
 
-          {Services.map((item, index) => {
+          {/* {Services.map((item, index) => {
             return (
               <li
                 className="services__item"
@@ -73,7 +113,7 @@ const ServicesGrid = () => {
                 <ServiceCard title={item.title} text={item.text} />
               </li>
             );
-          })}
+          })} */}
         </ul>
       </div>
       <ContactUs />
@@ -95,7 +135,8 @@ const Wrapper = styled.section`
   }
 
   .services__list {
-    grid-auto-flow: column;
+    /* grid-auto-flow: column; */
+    grid-auto-flow: row;
   }
 
   .services__item:first-child {
@@ -131,11 +172,44 @@ const Wrapper = styled.section`
   .list__accent {
     align-self: center;
   }
+
   .section__header {
     width: 312px;
   }
+
   .accent {
     color: var(--bg-color-secondary-light);
+  }
+
+  .react-horizontal-scrolling-menu--item:first-child {
+    align-self: center;
+  }
+
+  .react-horizontal-scrolling-menu--item:first-child div {
+    border: none;
+    padding: 0;
+  }
+
+  .react-horizontal-scrolling-menu--item:first-child h3 {
+    font-size: var(--large-font-size);
+    font-weight: var(--font-medium);
+    line-height: 48px;
+  }
+
+  .react-horizontal-scrolling-menu--item:first-child p {
+    background-color: var(--bg-color-secondary-light);
+    color: var(--text-color);
+    padding: 1.875rem 1.5rem;
+  }
+
+  .react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .react-horizontal-scrolling-menu--scroll-container {
+    gap: 1.5rem;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 
   @media (min-width: 768px) {
@@ -150,10 +224,6 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 1440px) {
-    /* &.section {
-      margin: 0 auto;
-    } */
-
     .scroll__wrapper {
       margin-top: 5rem;
       margin-bottom: 5rem;
