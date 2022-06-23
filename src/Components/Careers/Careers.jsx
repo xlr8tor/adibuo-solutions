@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 import Apply from "../../Assets/Images/Apply.svg";
 import Connect from "../../Assets/Images/Connect.svg";
 import Match from "../../Assets/Images/Match.svg";
+import { useWindowWidth } from "../../Hooks/useWindowWidth";
 
 const Careers = () => {
   return (
@@ -40,14 +41,18 @@ const Careers = () => {
         <CarouselProvider
           naturalSlideWidth={100}
           isIntrinsicHeight
-          totalSlides={2}
+          totalSlides={4}
         >
           <div className="carousel__list--wrapper grid">
             <h3 className="carousel__list--title">Positions Available</h3>
+            {useWindowWidth() >= 768 ? null : (
+              <span className="carousel-accent">Scroll for more &gt;</span>
+            )}
+
             <div className="carousel__list grid">
               {Titles.map((item, index) => {
                 return (
-                  <Dot slide={index}>
+                  <Dot slide={index} key={index}>
                     <span className="sr-only">{item}</span>
                   </Dot>
                 );

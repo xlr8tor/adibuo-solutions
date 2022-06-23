@@ -150,6 +150,10 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 1440px) {
+    /* &.section {
+      margin: 0 auto;
+    } */
+
     .scroll__wrapper {
       margin-top: 5rem;
       margin-bottom: 5rem;

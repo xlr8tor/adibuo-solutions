@@ -19,6 +19,7 @@ export const Wrapper = styled.section`
 
   .section__img-wrap {
     width: 100%;
+    max-width: 1200px;
   }
 
   .section__img {
@@ -38,7 +39,7 @@ export const Wrapper = styled.section`
   }
 
   @media (min-width: 1024px) {
-    &.section {
+    .section__tagline {
       font-size: 32px;
       line-height: 58px;
     }
@@ -46,6 +47,18 @@ export const Wrapper = styled.section`
     .section__content {
       padding-top: 9rem;
       gap: 4rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .section__tagline {
+      font-size: 48px;
+      line-height: 64px;
+    }
+
+    .section__content {
+      max-width: 1200px;
+      margin: 0 auto;
     }
   }
 `;

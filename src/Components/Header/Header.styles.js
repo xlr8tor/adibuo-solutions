@@ -73,6 +73,11 @@ export const Wrapper = styled.header`
     height: 20px;
   }
 
+  .active {
+    font-weight: var(--font-semi-bold);
+    text-decoration: none;
+  }
+
   @media (min-width: 768px) {
     &.header {
       position: fixed;
@@ -83,8 +88,8 @@ export const Wrapper = styled.header`
       top: 0;
       padding: 1.5rem 2rem;
       margin: auto;
-      background-color: ${(props) => (props.isHome ? "transparent" : "#fff")};
-      color: ${(props) => (props.isHome ? "#fff" : "#303030")};
+      background-color: "#fff";
+      color: var(--text-color-secondary);
     }
 
     .nav__wrapper {
@@ -114,8 +119,11 @@ export const Wrapper = styled.header`
     .nav__list {
       display: flex;
       margin: 0;
-      padding-left: 2rem;
       gap: 2rem;
+    }
+
+    .nav__link {
+      font-size: 0.875rem;
     }
 
     .nav__item {
@@ -136,6 +144,10 @@ export const Wrapper = styled.header`
     .header__section {
       max-width: 1200px;
       margin: 0 auto;
+    }
+
+    .nav__list {
+      gap: 3.125rem;
     }
   }
 `;

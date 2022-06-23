@@ -35,6 +35,7 @@ export const GlobalStyles = createGlobalStyle`
     --mb-3: 3rem;
 
      /* ========== Fonts Weights ==========*/
+    --font-light: 300;
     --font-regular: 400;
     --font-medium: 500;
     --font-semi-bold: 700;

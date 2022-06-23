@@ -106,8 +106,8 @@ const Wrapper = styled.div`
 
   @media (min-width: 1440px) {
     &.section {
-      margin-top: 6.25rem;
-      margin-bottom: 6.25rem;
+      max-width: 1200px;
+      margin: 6.25rem auto;
       padding: 6.25rem;
     }
   }

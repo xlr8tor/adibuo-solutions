@@ -51,4 +51,11 @@ export const Wrapper = styled.section`
       font-size: var(--h3-font-size);
     }
   }
+
+  @media (min-width: 1440px) {
+    .section {
+      max-width: 1200px;
+      margin: 8.75rem auto 4.5rem;
+    }
+  }
 `;

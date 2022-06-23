@@ -4,9 +4,9 @@ import Logo from "../../Assets/Images/Logo.svg";
 import Hamburger from "../../Assets/Images/Hamburger.svg";
 import Close from "../../Assets/Images/Close.svg";
 import { useWindowWidth } from "../../Hooks/useWindowWidth";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Header = ({ home }) => {
+const Header = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const isVisible = useWindowWidth() >= 768 ? true : false;
 
@@ -26,15 +26,14 @@ const Header = ({ home }) => {
 
   return (
     <Wrapper
-      isHome={home}
       className={
         scrollPosition >= 80 ? "header grid scroll-header" : "header grid"
       }
     >
       <div className="header__section">
-        <Link to="/">
+        <NavLink to="/">
           <img src={Logo} alt="logo" className="logo" />
-        </Link>
+        </NavLink>
         <div
           className={
             sidebarVisible && !isVisible
@@ -55,19 +54,19 @@ const Header = ({ home }) => {
             </div>
             <ul className="nav__list">
               <li className="nav__item">
-                <Link to="/about" className="nav__link">
+                <NavLink to="/about" className="nav__NavLink">
                   About Us
-                </Link>
+                </NavLink>
               </li>
               <li className="nav__item">
-                <Link to="/services" className="nav__link">
+                <NavLink to="/services" className="nav__NavLink">
                   Services
-                </Link>
+                </NavLink>
               </li>
               <li className="nav__item">
-                <Link to="/careers" className="nav__link">
+                <NavLink to="/careers" className="nav__NavLink">
                   Careers
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </nav>

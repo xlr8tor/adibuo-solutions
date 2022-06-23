@@ -29,7 +29,11 @@ const DesktopProfile = () => {
         {Profile.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <ProfileCard text={item.text} name={item.name} src={item.src} />
+              <ProfileCard
+                text={item.text}
+                name={item.name}
+                src={`/${item.src}-desktop.png`}
+              />
             </SwiperSlide>
           );
         })}

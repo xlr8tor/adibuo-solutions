@@ -25,11 +25,38 @@ export const Positions = [
       "Design and implementation of data storage solutions",
     ],
   },
+  {
+    positiion: "Front-end Engineer",
+    description:
+      "We are looking for a Front-End Web Developer who is motivated to combine the art of design with the art of programming. Responsibilities will include translation of the UI/UX design wireframes to actual code that will produce visual elements of the application. You will work with the UI/UX designer and bridge the gap between graphical design and technical implementation, taking an active role on both sides and defining how the application looks as well as how it works.",
+    responsibility: [
+      "Develop new user-facing features",
+      "Build reusable code and libraries for future use",
+      "Ensure the technical feasibility of UI/UX designs",
+      "Optimise application for maximum speed and scalability",
+      "Assure that all user input is validated before submitting to back-end",
+      "Collaborate with other team members and stakeholders",
+    ],
+  },
+  {
+    positiion: "Technical Support Agent",
+    description:
+      "We are looking for a competent Help desk technician to provide fast and useful technical assistance on computer systems. You will answer queries on basic technical issues and offer advice to solve them. An excellent Help desk technician must have good technical knowledge and be able to communicate effectively to understand the problem and explain its solution. They must also be customer-oriented and patient to deal with difficult customers.",
+    responsibility: [
+      "Provide technical assistance with computer hardware and software",
+      "Resolve issues for customers via phone, email, chat.",
+      "Log bugs and enhancement requests",
+      "Perform hardware and software installations, configurations and updates as needed",
+      "Create and maintain tips and tricks solutions for online database and website",
+      "Perform remote troubleshooting through diagnostic techniques and pertinent questions.",
+      "Resolve technical issues in a timely manner using available resources within the company.",
+    ],
+  },
 ];
 
 export const Titles = [
-  "Customer experience manager",
+  "Customer Experience Manager",
   "Back-end Engineer",
-  "Front - End engineer",
-  "IT support",
+  "Front-end Engineer",
+  "Technical Support Agent",
 ];

@@ -9,7 +9,7 @@ const Home = () => {
   const isDesktop = useWindowWidth() >= 768 ? true : false;
   return (
     <>
-      <Header home={true} />
+      <Header />
       <Wrapper className="section">
         <div className="section__wrapper grid">
           <div className="section__content">

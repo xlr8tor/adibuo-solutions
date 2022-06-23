@@ -117,9 +117,13 @@ export const Wrapper = styled.section`
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1441px) {
     &.section {
       min-height: 100vh;
+    }
+
+    .container {
+      margin: 0 auto;
     }
   }
 `;

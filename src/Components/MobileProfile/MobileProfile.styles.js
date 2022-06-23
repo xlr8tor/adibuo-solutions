@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
     margin-bottom: 212px;
   }
 
-  .profile__data {
+  .profile__info {
     padding: 8rem 0 3rem 0;
   }
 
@@ -25,18 +25,45 @@ export const Wrapper = styled.div`
     max-width: 100%;
     left: 0;
     right: 0;
-    bottom: 3rem;
+    bottom: 2rem;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .profile__name-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--mb-1-5);
   }
 
   .profile__name {
     font-size: var(--h1-font-size);
     font-weight: var(--font-medium);
-    margin-bottom: var(--mb-1-5);
   }
 
-  .profile__info {
-    white-space: pre-line;
+  .profile__data span {
+    display: block;
+  }
+
+  .profile__data span:nth-child(2) {
+    margin-top: var(--mb-1);
+    margin-bottom: var(--mb-1);
+  }
+
+  .accent {
+    display: flex;
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    color: var(--text-color-secondary);
+  }
+
+  .socials-link {
+    margin-left: var(--mb-1-5);
+  }
+
+  .socials-icon {
+    font-size: 20px;
   }
 `;

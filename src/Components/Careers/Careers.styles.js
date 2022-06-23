@@ -41,6 +41,7 @@ export const Wrapper = styled.section`
   .carousel {
     margin-bottom: 3rem;
   }
+
   .carousel__list--wrapper {
     margin-bottom: var(--mb-2-5);
     gap: 12px;
@@ -49,7 +50,12 @@ export const Wrapper = styled.section`
   .carousel__list--title {
     font-size: var(--h1-font-size);
     font-weight: var(--font-semi-bold);
-    line-height: 64px;
+    line-height: 32px;
+  }
+
+  .carousel-accent {
+    font-size: 12px;
+    font-weight: var(--font-medium);
   }
 
   .carousel__list {
