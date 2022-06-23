@@ -68,8 +68,7 @@ export const Wrapper = styled.section`
   }
 
   .carousel__list::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+    display: none;
   }
 
   .carousel__list .carousel__dot {
