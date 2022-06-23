@@ -82,6 +82,9 @@ const Wrapper = styled.div`
     border-radius: 1.25rem;
     padding: 3rem 1.5rem;
     min-height: 324px;
+    z-index: 10;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
   }
 
   .card__title {
