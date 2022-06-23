@@ -131,7 +131,7 @@ const Wrapper = styled.div`
   .icon-caret {
     vertical-align: middle;
     margin-left: var(--mb-0-5);
-    transition: all 0.4s ease;
+    transition: all 0.6s ease;
   }
 
   .opened {

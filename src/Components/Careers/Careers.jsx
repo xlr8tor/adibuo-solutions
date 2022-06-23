@@ -42,6 +42,7 @@ const Careers = () => {
           naturalSlideWidth={100}
           isIntrinsicHeight
           totalSlides={4}
+          lockOnWindowScroll={true}
         >
           <div className="carousel__list--wrapper grid">
             <h3 className="carousel__list--title">Positions Available</h3>
