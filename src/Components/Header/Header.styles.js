@@ -34,7 +34,7 @@ export const Wrapper = styled.header`
     z-index: 100;
   }
 
-  .nav__wrapper.nav__wrapper-close {
+  .nav__wrapper-close {
     min-height: 0;
     visibility: hidden;
   }
@@ -104,6 +104,7 @@ export const Wrapper = styled.header`
       width: inherit;
       overflow: visible;
       background-color: transparent;
+      visibility: visible;
     }
 
     .nav {
