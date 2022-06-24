@@ -51,12 +51,20 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
     font-family: var(--body-font), var(--body-font-fallback);
   font-size: var(--bodyFontSize);
   font-weight: var(--font-regular);
   color: var(--text-color-secondary);
   line-height: var(--body-line-height);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: -moz-available;
+  min-height: fill-available;
     
 }
 
