@@ -50,7 +50,7 @@ const Home = () => {
             {isDesktop && <HomeFooter />}
           </div>
 
-          <div>
+          <div className="home__img-wrapper">
             <img
               src={isDesktop ? DesktopImage : MobileImage}
               alt=""

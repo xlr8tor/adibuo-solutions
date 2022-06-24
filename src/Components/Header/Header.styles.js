@@ -29,7 +29,9 @@ export const Wrapper = styled.header`
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 100vh;
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
     overflow: hidden;
     z-index: 100;
   }

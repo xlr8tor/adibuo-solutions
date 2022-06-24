@@ -115,6 +115,16 @@ export const Wrapper = styled.section`
       max-width: 600px;
       margin-top: 0;
     }
+
+    .home__img-wrapper {
+      width: 100%;
+    }
+
+    .home__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   @media (min-width: 1441px) {
