@@ -23,6 +23,7 @@ export const Profile = [
       </p>
     ),
     src: "diseph-profile",
+    linkTo: "https://www.linkedin.com/in/disephe-ikata",
   },
   {
     name: "Olabisi Owolabi",
@@ -48,5 +49,6 @@ export const Profile = [
     ),
 
     src: "bisi-profile",
+    linkTo: "https://www.linkedin.com/in/olabisi-owolabi-136742177",
   },
 ];

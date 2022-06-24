@@ -2,24 +2,24 @@ import { useContext, useState, useEffect } from "react";
 import { VisibilityContext } from "react-horizontal-scrolling-menu";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const style = {
-  background: "none",
-  color: " inherit",
-  border: "none",
-  padding: 0,
-  font: "inherit",
-  fontWeight: "var(--font-light)",
-  cursor: "pointer",
-  outline: "inherit",
-  position: "absolule",
-};
-
 const caretStyle = {
   fontSize: "50px",
   color: "var(--bg-color-secondary-light)",
 };
 
 const Arrow = ({ children, disabled, onClick }) => {
+  const style = {
+    background: "none",
+    color: "inherit",
+    border: "none",
+    padding: 0,
+    font: "inherit",
+    fontWeight: "var(--font-light)",
+    cursor: disabled ? "not-allowed" : "pointer",
+    opacity: disabled ? "0.3" : "1",
+    outline: "inherit",
+  };
+
   return (
     <button disabled={disabled} onClick={onClick} style={style}>
       {children}

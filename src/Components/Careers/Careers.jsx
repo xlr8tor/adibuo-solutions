@@ -1,4 +1,5 @@
 import { CarouselProvider, Dot, Slide, Slider } from "pure-react-carousel";
+import { Helmet } from "react-helmet-async";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import Footer from "../Footer/Footer";
 import JobCard from "../JobCard/JobCard";
@@ -13,6 +14,17 @@ import { useWindowWidth } from "../../Hooks/useWindowWidth";
 const Careers = () => {
   return (
     <Wrapper>
+      <Helmet>
+        <title>We care if you are passionate and have a growth mindset!</title>
+        <meta
+          name="description"
+          content="We operate on a 100% remote working system and once a year our teams meet at a fully sponsored gathering to collaborate and meet with teammates all over the world. Due to our model of working, we require disciplined people that can work effectively while being thousands of miles apart from their teammates. If you require a lot of hand-holding and micromanaging Adibuo is not for you. If you are looking to grow, horn your skills, and be 10x efficient at what you do please see below available opportunities. we can not wait to meet with you!"
+        />
+        <meta
+          name="keywords"
+          content="Remote working, customer service, developers, IT support"
+        />
+      </Helmet>
       <Header />
       <section className="hiring container">
         <h1 className="hiring__title">Our Hiring Process</h1>

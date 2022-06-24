@@ -1,5 +1,4 @@
-import React from "react";
-import ContactUs from "../ContactUs/ContactUs";
+import { Helmet } from "react-helmet-async";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { Wrapper } from "./Services.styles";
@@ -7,12 +6,24 @@ import MobileIMG from "../../Assets/Images/mobile-services-img.jpg";
 import DesktopIMG from "../../Assets/Images/desktop-services-img.png";
 import { useWindowWidth } from "../../Hooks/useWindowWidth";
 import ServicesGrid from "../ServicesGrid/ServicesGrid";
+
 const Services = () => {
   const isDesktop = useWindowWidth() >= 768 ? true : false;
 
   return (
     <div>
       <Header />
+      <Helmet>
+        <title>Adibuo Service Offerings</title>
+        <meta
+          name="description"
+          content="We embed into your team as an external partner. whether you’ve got a customer service team in need of experienced direction or you’re a start-up with barely any support.!"
+        />
+        <meta
+          name="keywords"
+          content="Customer service experience, IT support, Infrastructure, growth"
+        />
+      </Helmet>
       <Wrapper>
         <section className="container grid section">
           <div className="section__img-wrap">

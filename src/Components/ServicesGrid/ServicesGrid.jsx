@@ -212,6 +212,12 @@ const Wrapper = styled.section`
     scrollbar-width: none; /* Firefox */
   }
 
+  .react-horizontal-scrolling-menu--arrow-left,
+  .react-horizontal-scrolling-menu--arrow-right {
+    justify-self: center;
+    align-self: center;
+  }
+
   @media (min-width: 768px) {
     .scroll__wrapper {
       margin-top: 5rem;

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Wrapper } from "./Home.styles";
 import { useWindowWidth } from "../../Hooks/useWindowWidth";
 import MobileImage from "../../Assets/Images/mobile-home-img.png";
@@ -11,6 +12,17 @@ const Home = () => {
     <>
       <Header />
       <Wrapper className="section">
+        <Helmet>
+          <title>Adibuo Solutions</title>
+          <meta
+            name="description"
+            content="Adibuo Solutions is a trusted advisor that is just right for your start-up or scale-up business or institutions. We are a group of professionals that provides best-in-class customer and IT solutions."
+          />
+          <meta
+            name="keywords"
+            content="Adibuo, consulting, solutions, customer service, customer experience, IT service, IT solutions"
+          />
+        </Helmet>
         <div className="section__wrapper grid">
           <div className="section__content">
             <div className=" container ">

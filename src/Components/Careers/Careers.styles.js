@@ -45,6 +45,7 @@ export const Wrapper = styled.section`
   .carousel__list--wrapper {
     margin-bottom: var(--mb-2-5);
     gap: 12px;
+    align-items: center;
   }
 
   .carousel__list--title {

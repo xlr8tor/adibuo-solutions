@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import classnames from "classnames";
 import lodash from "lodash";
-import { useWindowWidth } from "../../Hooks/useWindowWidth";
 import styled from "styled-components";
+import { useWindowWidth } from "../../Hooks/useWindowWidth";
+import Apply from "../ApplyButton/Apply";
 import { IoIosArrowDown } from "react-icons/io";
 
 const JobCard = ({ position, description, responsibility }) => {
@@ -44,7 +45,11 @@ const JobCard = ({ position, description, responsibility }) => {
 
   return (
     <Wrapper className="card">
-      <h3 className="card__title">{position}</h3>
+      <div className="card__title-wrapper">
+        <h3 className="card__title">{position}</h3>
+        {!isVisible && <Apply />}
+      </div>
+
       <p
         className={classnames("card__description", clamped && "clamp")}
         ref={containerRef}
@@ -69,6 +74,7 @@ const JobCard = ({ position, description, responsibility }) => {
           );
         })}
       </ul>
+      {isVisible && !clamped && <Apply />}
     </Wrapper>
   );
 };
@@ -91,7 +97,6 @@ const Wrapper = styled.div`
     font-size: var(--h1-font-size);
     font-weight: var(--font-semi-bold);
     line-height: 36px;
-    margin-bottom: var(--mb-1-5);
   }
 
   .card__description {
@@ -105,6 +110,7 @@ const Wrapper = styled.div`
     list-style: disc;
     padding: 0 1.5rem;
     margin-top: var(--mb-1);
+    margin-bottom: var(--mb-3);
   }
 
   .open {
@@ -145,6 +151,13 @@ const Wrapper = styled.div`
     &.card {
       padding: 2rem;
       height: 100%;
+    }
+
+    .card__title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--mb-1-5);
     }
 
     .card__list {

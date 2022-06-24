@@ -33,6 +33,7 @@ const DesktopProfile = () => {
                 text={item.text}
                 name={item.name}
                 src={`/${item.src}-desktop.png`}
+                link={item.linkTo}
               />
             </SwiperSlide>
           );

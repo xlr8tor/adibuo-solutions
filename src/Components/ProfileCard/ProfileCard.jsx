@@ -1,18 +1,22 @@
 import { Wrapper } from "./ProfileCard.styles";
 import { FaLinkedinIn } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
-const ProfileCard = ({ name, text, src }) => {
+const ProfileCard = ({ name, text, src, link }) => {
   return (
     <Wrapper className="profile grid container">
       <div className="profile__content">
         <div className="profile__name-wrapper">
           <h3 className="profile__name">{name}</h3>
-          <Link to="/" className="socials-link">
+          <a
+            href={link}
+            className="socials-link"
+            target="_blank"
+            rel="noreferrer"
+          >
             <span className="accent">
               <FaLinkedinIn className="socials-icon" />
             </span>
-          </Link>
+          </a>
         </div>
         {text}
       </div>
