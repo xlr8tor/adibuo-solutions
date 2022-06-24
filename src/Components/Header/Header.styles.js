@@ -29,23 +29,23 @@ export const Wrapper = styled.header`
     right: 0;
     bottom: 0;
     width: 100%;
-    height: -moz-available;
-    height: -webkit-fill-available;
-    height: fill-available;
+    min-height: 100vh;
     overflow: hidden;
     z-index: 100;
   }
 
-  .nav__wrapper-close {
-    height: 0;
+  .nav__wrapper.nav__wrapper-close {
+    min-height: 0;
+    visibility: hidden;
   }
 
   .nav {
     background-color: var(--bg-color-secondary-lighter);
-    height: inherit;
+    min-height: 100% !important;
     float: right;
     padding: 1.5rem;
     width: 60%;
+    max-width: 350px;
     transform: translateX(300px);
     transition: transform 0.5s;
   }
@@ -57,6 +57,10 @@ export const Wrapper = styled.header`
   .close__btn {
     position: absolute;
     right: 1.4rem;
+  }
+
+  .nav__list {
+    padding-top: 40px;
   }
 
   .nav__item {
@@ -120,6 +124,7 @@ export const Wrapper = styled.header`
 
     .nav__list {
       display: flex;
+      padding-top: 0;
       margin: 0;
       gap: 2rem;
     }
