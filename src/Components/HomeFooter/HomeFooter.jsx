@@ -9,6 +9,8 @@ const HomeFooter = ({ isFooter }) => {
         <li className="footer__item">
           <a
             href="https://www.facebook.com/Adibuo.Solutions"
+            target="_blank"
+            rel="noreferrer"
             className="footer__link"
           >
             <FaFacebook className="socials-icon" />
@@ -17,6 +19,8 @@ const HomeFooter = ({ isFooter }) => {
         <li className="footer__item">
           <a
             href="https://twitter.com/AdibuoSolutions"
+            target="_blank"
+            rel="noreferrer"
             className="footer__link"
           >
             <AiFillTwitterCircle className="socials-icon" />
@@ -25,6 +29,8 @@ const HomeFooter = ({ isFooter }) => {
         <li className="footer__item">
           <a
             href="https://www.instagram.com/adibuosolutions/"
+            target="_blank"
+            rel="noreferrer"
             className="footer__link"
           >
             <FaInstagram className="socials-icon" />

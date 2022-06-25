@@ -8,7 +8,9 @@ const ContactUs = () => {
     >
       <h2 className="section__subtitile mb-2">
         Want to propel your business forward?
-        <span className="accent"> Contact us</span>
+        <a href="mailto:hell@adibuosolutions.com">
+          <span className="accent"> Contact us</span>
+        </a>
       </h2>
       <p className="subsection__intro">Our process:-</p>
       <ul className="section__list">
