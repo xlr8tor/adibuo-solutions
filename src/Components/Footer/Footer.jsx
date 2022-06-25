@@ -54,17 +54,26 @@ const Footer = () => {
 
           <ul className="footer__links grid">
             <li className="footer__items">
-              <a href="https://www.facebook.com" className="footer__link">
+              <a
+                href="https://www.facebook.com/Adibuo.Solutions"
+                className="footer__link"
+              >
                 <FaFacebook className="socials-icon" />
               </a>
             </li>
             <li className="footer__items">
-              <a href="https://www.facebook.com" className="footer__link">
+              <a
+                href="https://twitter.com/AdibuoSolutions"
+                className="footer__link"
+              >
                 <AiFillTwitterCircle className="socials-icon" />
               </a>
             </li>
             <li className="footer__items">
-              <a href="https://www.facebook.com" className="footer__link">
+              <a
+                href="https://www.instagram.com/adibuosolutions/"
+                className="footer__link"
+              >
                 <FaInstagram className="socials-icon" />
               </a>
             </li>

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { CarouselProvider, Dot, Slide, Slider } from "pure-react-carousel";
 import { Helmet } from "react-helmet-async";
 import "pure-react-carousel/dist/react-carousel.es.css";
@@ -13,18 +13,16 @@ import Match from "../../Assets/Images/Match.svg";
 import { useWindowWidth } from "../../Hooks/useWindowWidth";
 
 const Careers = () => {
-  const tabs = useRef([]);
-  const menuRef = useRef();
-  const test = useRef();
-
-  const createTabsRefs = (tab, index) => {
-    tabs.current[index] = tab;
-    console.log(tabs);
-  };
-
-  console.log(test);
-
-  useEffect(() => {}, []);
+  useEffect(() => {
+    document.getElementsByClassName("carousel__list")[0].scrollLeft = 0;
+    const buttons = document.querySelectorAll(".carousel__item");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        document.getElementsByClassName("carousel__list")[0].scrollLeft =
+          button.offsetLeft / 1.2;
+      });
+    });
+  }, []);
   return (
     <Wrapper>
       <Helmet>
@@ -75,20 +73,10 @@ const Careers = () => {
               <span className="carousel-accent">Scroll for more &gt;</span>
             )}
 
-            <div className="carousel__list grid" ref={test}>
+            <div className="carousel__list grid">
               {Titles.map((item, index) => {
-                const handleClick = () => {
-                  console.log("here");
-                };
-
                 return (
-                  <Dot
-                    slide={index}
-                    key={index}
-                    className="carousel__item"
-                    // ref={(e) => createTabsRefs(e, index)}
-                    onClick={handleClick}
-                  >
+                  <Dot slide={index} key={index} className="carousel__item">
                     <span className="sr-only">{item}</span>
                   </Dot>
                 );

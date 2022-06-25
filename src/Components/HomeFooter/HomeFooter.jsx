@@ -7,17 +7,26 @@ const HomeFooter = ({ isFooter }) => {
     <Wrapper className="footer" isFooter={isFooter}>
       <ul className="footer__list">
         <li className="footer__item">
-          <a href="https://www.facebook.com" className="footer__link">
+          <a
+            href="https://www.facebook.com/Adibuo.Solutions"
+            className="footer__link"
+          >
             <FaFacebook className="socials-icon" />
           </a>
         </li>
         <li className="footer__item">
-          <a href="https://www.twitter.com" className="footer__link">
+          <a
+            href="https://twitter.com/AdibuoSolutions"
+            className="footer__link"
+          >
             <AiFillTwitterCircle className="socials-icon" />
           </a>
         </li>
         <li className="footer__item">
-          <a href="https://https:www.instagram.com" className="footer__link">
+          <a
+            href="https://www.instagram.com/adibuosolutions/"
+            className="footer__link"
+          >
             <FaInstagram className="socials-icon" />
           </a>
         </li>
